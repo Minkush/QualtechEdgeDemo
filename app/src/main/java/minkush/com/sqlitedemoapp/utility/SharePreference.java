@@ -5,11 +5,12 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
- * Created by wingify on 21/02/18.
+ * Created by minkush on 21/02/18.
  */
 
 public class SharePreference {
 
+    //save data in shareprefrence
     public static void saveKeyValueSharePreference(Context context, String s_key, boolean s_value){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
@@ -17,6 +18,7 @@ public class SharePreference {
         editor.apply();
     }
 
+    //get data from shareprefrence
     public static boolean getKeyValueSharePreference(Context context,String s_key){
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

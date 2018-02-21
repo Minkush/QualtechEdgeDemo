@@ -19,7 +19,7 @@ import minkush.com.sqlitedemoapp.api.responseapi.ResponseRestCountriesApi;
 import static minkush.com.sqlitedemoapp.utility.APIUrlConstant.GET_REST_COUNTRIES_API;
 
 /**
- * Created by wingify on 20/02/18.
+ * Created by minkush on 20/02/18.
  */
 
 public class PostRestCountriesApi extends AsyncTask<Void, Void,String> {

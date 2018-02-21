@@ -25,7 +25,7 @@ import minkush.com.sqlitedemoapp.api.responseapi.ResponseRestCountriesApi;
 import static minkush.com.sqlitedemoapp.InputScreenActivity.ACTION_INTENT;
 
 /**
- * Created by wingify on 20/02/18.
+ * Created by minkush on 20/02/18.
  */
 
 public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.ViewHolder>{
@@ -134,7 +134,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
-                                AppController.getInstance().getSqliteInstance().deleteStudent(countryIdArrayList.get(position).toString());
+                                AppController.getInstance().getSqliteInstance().deleteCountry(countryIdArrayList.get(position).toString());
                                 Toast.makeText(mainActivity,"Delete Successfully",Toast.LENGTH_SHORT).show();
                                 mainActivity.getDataFromSqlite();
                             }

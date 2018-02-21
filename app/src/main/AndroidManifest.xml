@@ -26,11 +26,11 @@
         </activity>
         <activity android:name=".InputScreenActivity"
             android:screenOrientation="portrait"
-            android:label="Enter Input Data"
+            android:label="@string/title_input_screen"
             ></activity>
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:label="Countries List"
+            android:label="@string/title_main_screen"
             ></activity>
     </application>
 

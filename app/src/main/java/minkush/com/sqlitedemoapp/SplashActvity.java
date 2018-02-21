@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 
 /**
- * Created by wingify on 21/02/18.
+ * Created by minkush on 21/02/18.
  */
 
 public class SplashActvity extends Activity {

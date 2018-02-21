@@ -25,14 +25,17 @@ import static minkush.com.sqlitedemoapp.database.SqliteController.COLUMN_COUNTRY
 import static minkush.com.sqlitedemoapp.database.SqliteController.COLUMN_COUNTRY_REGION;
 
 /**
- * Created by wingify on 20/02/18.
+ * Created by minkush on 20/02/18.
  */
 
 public class InputScreenActivity extends AppCompatActivity {
 
     private AppCompatEditText appCompatEditText_countryname,appCompatEditText_capitalname,appCompatEditText_regionname,appCompatEditText_nativename;
     private AppCompatButton appCompatButton_submit;
+
+    //sqtite controller
     private SqliteController controller;
+
     public static String ACTION_INTENT = "isAddorEdit";
     public static String ACTION_EDIT = "edit";
     public static String ACTION_ADD = "add";
@@ -49,6 +52,7 @@ public class InputScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inputscreen);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         appCompatEditText_countryname = (AppCompatEditText)findViewById(R.id.activity_input_edittext_countryname);
         appCompatEditText_capitalname = (AppCompatEditText)findViewById(R.id.activity_input_edittext_capitalname);
         appCompatEditText_regionname = (AppCompatEditText)findViewById(R.id.activity_input_edittext_regionname);
@@ -59,7 +63,6 @@ public class InputScreenActivity extends AppCompatActivity {
         Intent intent = getIntent();
         TAG_ACTION = intent.getStringExtra(ACTION_INTENT);
         if(TAG_ACTION.equals(ACTION_EDIT)){
-
             TAG_ACTION = ACTION_EDIT;
             edit_countryId = getIntent().getStringExtra("countryId");
             String county = getIntent().getStringExtra("country");
@@ -113,7 +116,7 @@ public class InputScreenActivity extends AppCompatActivity {
                     stringHashMap.put(COLUMN_COUNTRY_CAPITAL,capitalname);
                     stringHashMap.put(COLUMN_COUNTRY_REGION,regionname);
                     stringHashMap.put(COLUMN_COUNTRY_NATIVENAME,nativename);
-                    int output = controller.updateStudent(edit_countryId,stringHashMap);
+                    int output = controller.updateCountry(edit_countryId,stringHashMap);
                     if(output == 1){
                         Toast.makeText(InputScreenActivity.this,"Data Update Successfully",Toast.LENGTH_SHORT).show();
                     }else{
@@ -127,7 +130,7 @@ public class InputScreenActivity extends AppCompatActivity {
                     stringHashMap.put(COLUMN_COUNTRY_CAPITAL,capitalname);
                     stringHashMap.put(COLUMN_COUNTRY_REGION,regionname);
                     stringHashMap.put(COLUMN_COUNTRY_NATIVENAME,nativename);
-                    controller.insertStudent(stringHashMap);
+                    controller.insertCountry(stringHashMap);
                     setResult(RESULT_OK);
                     Toast.makeText(InputScreenActivity.this,"Data Saved Successfully",Toast.LENGTH_SHORT).show();
 
@@ -141,7 +144,6 @@ public class InputScreenActivity extends AppCompatActivity {
 
 
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

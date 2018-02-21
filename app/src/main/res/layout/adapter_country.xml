@@ -24,7 +24,6 @@
             android:id="@+id/adapter_country_textview_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name - "
             android:textStyle="bold"
             android:textColor="@android:color/black" />
 
@@ -32,21 +31,18 @@
             android:id="@+id/adapter_country_textview_capital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Capital - "
             android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/adapter_country_textview_region"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Region - "
             android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/adapter_country_textview_nativename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Native Name - "
             android:textColor="@android:color/black" />
 
     </LinearLayout>
@@ -62,20 +58,20 @@
             android:id="@+id/adapter_country_button_share"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Share"
+            android:text="@string/share"
             />
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/adapter_country_button_delete"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Delete"
+            android:text="@string/delete"
             />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/adapter_country_button_edit"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Edit"
+            android:text="@string/edit"
             />
 
     </LinearLayout>

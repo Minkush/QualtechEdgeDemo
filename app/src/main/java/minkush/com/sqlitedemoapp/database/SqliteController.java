@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by wingify on 20/02/18.
+ * Created by minkush on 20/02/18.
  */
 
 public class SqliteController extends SQLiteOpenHelper {
+
     private static final String LOGCAT = null;
     private static final String TABLE_COUNTRY = "country";
     public static final String COLUMN_COUNTRY_ID = "country_id";
@@ -25,27 +26,34 @@ public class SqliteController extends SQLiteOpenHelper {
 
 
     public SqliteController(Context applicationcontext) {
-        super(applicationcontext, "androidsqlite.db", null, 1);
+        super(applicationcontext, "minkushsqlite.db", null, 1);
         Log.d(LOGCAT, "Created");
     }
 
+    // create table
     @Override
     public void onCreate(SQLiteDatabase database) {
         String query;
         query = "CREATE TABLE " + TABLE_COUNTRY + " ( " + COLUMN_COUNTRY_ID + " INTEGER PRIMARY KEY, " + COLUMN_COUNTRY_NAME + " TEXT, "
                 + COLUMN_COUNTRY_CAPITAL + " TEXT, " + COLUMN_COUNTRY_REGION + " TEXT, " + COLUMN_COUNTRY_NATIVENAME + " TEXT ) ";
         database.execSQL(query);
+
     }
 
+    // upgrade table
     @Override
     public void onUpgrade(SQLiteDatabase database, int version_old, int current_version) {
         String query;
         query = "DROP TABLE IF EXISTS " + TABLE_COUNTRY;
         database.execSQL(query);
         onCreate(database);
+        Log.d(LOGCAT, "Upgrade table");
+
     }
 
-    public void insertStudent(HashMap<String, String> queryValues) {
+    // insert data in table
+    public void insertCountry(HashMap<String, String> queryValues) {
+        Log.d(LOGCAT, "Insert Country");
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_COUNTRY_NAME, queryValues.get(COLUMN_COUNTRY_NAME));
@@ -56,7 +64,9 @@ public class SqliteController extends SQLiteOpenHelper {
         database.close();
     }
 
-    public int updateStudent(String countryId, HashMap<String, String> queryValues) {
+    // update country
+    public int updateCountry(String countryId, HashMap<String, String> queryValues) {
+        Log.d(LOGCAT, "Update Country");
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_COUNTRY_NAME, queryValues.get(COLUMN_COUNTRY_NAME));
@@ -66,14 +76,18 @@ public class SqliteController extends SQLiteOpenHelper {
         return database.update(TABLE_COUNTRY, values, COLUMN_COUNTRY_ID + " = ?", new String[]{countryId});
     }
 
-    public void deleteStudent(String countryId) {
+    // delete country
+    public void deleteCountry(String countryId) {
+        Log.d(LOGCAT, "Delete Country");
         SQLiteDatabase database = this.getWritableDatabase();
         String deleteQuery = "DELETE FROM " + TABLE_COUNTRY + " where " + COLUMN_COUNTRY_ID + "='" + countryId + "'";
         database.execSQL(deleteQuery);
     }
 
 
+    // get all countries
     public ArrayList<HashMap<String, String>> getAllCountries() {
+        Log.d(LOGCAT, "Get All Country");
         ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
         String selectQuery = "SELECT * FROM " + TABLE_COUNTRY;

@@ -5,11 +5,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * Created by wingify on 20/02/18.
+ * Created by minkush on 20/02/18.
  */
 
 public class InternetConnection {
 
+    //check internet connection
     public static final boolean isInternetOn(Context context) {
 
 

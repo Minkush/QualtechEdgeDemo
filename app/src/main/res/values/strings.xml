@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">SqliteDemoApp</string>
 
+    <string name="app_name">QualTechEdge</string>
     <string name="enter_country_name">Enter country name</string>
     <string name="enter_capital_name">Enter capital name</string>
     <string name="enter_region_name">Enter region name</string>
     <string name="enter_native_name">Enter native name</string>
+    <string name="submit">Submit</string>
+    <string name="splashscreen">Splash Screen</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="title_input_screen">Enter Input Data</string>
+    <string name="title_main_screen">Countries List</string>
 
 </resources>
