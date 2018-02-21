@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SqliteDemoApp</string>
+
+    <string name="enter_country_name">Enter country name</string>
+    <string name="enter_capital_name">Enter capital name</string>
+    <string name="enter_region_name">Enter region name</string>
+    <string name="enter_native_name">Enter native name</string>
+
+</resources>
